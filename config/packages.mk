@@ -57,3 +57,7 @@ PRODUCT_PACKAGES += \
     sshd_config \
     ssh-keygen \
     start-ssh
+
+# init file
+PRODUCT_COPY_FILES += \
+    vendor/batik/prebuilt/common/etc/init.local.rc:system/etc/init/init.batik.rc
