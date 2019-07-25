@@ -56,6 +56,10 @@ PRODUCT_COPY_FILES += \
     vendor/batik/config/permissions/privapp-permissions-recorder.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-recorder.xml \
     vendor/batik/config/permissions/org.pixelexperience.recorder.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.pixelexperience.recorder.xml
 
+#Superior Permissions
+PRODUCT_COPY_FILES += \
+    vendor/batik/config/permissions/privapp-permissions-batik-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-batik.xml \
+
 # Include LatinIME dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/batik/overlay/dictionaries
 
