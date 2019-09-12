@@ -33,11 +33,9 @@ BATIK_DATE_MINUTE := $(shell date -u +%M)
 BATIK_BUILD_DATE_UTC := $(shell date -d '$(BATIK_DATE_YEAR)-$(BATIK_DATE_MONTH)-$(BATIK_DATE_DAY) $(BATIK_DATE_HOUR):$(BATIK_DATE_MINUTE) UTC' +%s)
 CUSTOM_BUILD_DATE := $(BATIK_DATE_YEAR)$(BATIK_DATE_MONTH)$(BATIK_DATE_DAY)-$(BATIK_DATE_HOUR)$(BATIK_DATE_MINUTE)
 
-
 ifeq ($(BATIK_OFFICIAL), true)
-   LIST = $(shell curl -s https://raw.githubusercontent.com/Batik-OS/android_vendor_batik/tiramisu/batik.devices)
-   FOUND_DEVICE =  $(filter $(CURRENT_DEVICE), $(LIST))
-    ifeq ($(FOUND_DEVICE),$(CURRENT_DEVICE))
+   LIST = $(shell cat vendor/BATIK/BATIK.devices)
+    ifeq ($(filter $(CURRENT_DEVICE), $(LIST)), $(CURRENT_DEVICE))
       IS_OFFICIAL=true
       BATIK_BUILD_TYPE := OFFICIAL
 
@@ -47,7 +45,7 @@ PRODUCT_PACKAGES += \
     endif
     ifneq ($(IS_OFFICIAL), true)
        BATIK_BUILD_TYPE := UNOFFICIAL
-       $(error Device is not official "$(FOUND)")
+       $(error Device is not official "$(CURRENT_DEVICE)")
     endif
 endif
 
