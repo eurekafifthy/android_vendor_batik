@@ -33,13 +33,7 @@ PRODUCT_COPY_FILES += \
     vendor/batik/prebuilt/common/bin/backuptool_postinstall.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/backuptool_postinstall.sh
 endif
 
-ifneq ($(TARGET_BUILD_VARIANT),user)
-# userinit support
-PRODUCT_COPY_FILES += \
-    vendor/batik/prebuilt/common/etc/init.d/90userinit:$(TARGET_COPY_OUT_SYSTEM)/etc/init.d/90userinit
-endif
-
-# Copy all Superior-specific init rc files
+# Copy all Batik-specific init rc files
 $(foreach f,$(wildcard vendor/batik/prebuilt/common/etc/init/*.rc),\
 	$(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_SYSTEM)/etc/init/$(notdir $f)))
 
@@ -56,7 +50,7 @@ PRODUCT_COPY_FILES += \
     vendor/batik/config/permissions/privapp-permissions-recorder.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-recorder.xml \
     vendor/batik/config/permissions/org.pixelexperience.recorder.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/org.pixelexperience.recorder.xml
 
-#Superior Permissions
+#Batik Permissions
 PRODUCT_COPY_FILES += \
     vendor/batik/config/permissions/privapp-permissions-batik-product.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-batik.xml \
 
