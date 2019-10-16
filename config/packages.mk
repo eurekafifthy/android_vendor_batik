@@ -48,6 +48,7 @@ PRODUCT_PACKAGES += \
     zip \
     BluetoothExt \
     Dialer \
+    Recorder \
     ExactCalculator \
     Launcher3QuickStep \
     messaging \
