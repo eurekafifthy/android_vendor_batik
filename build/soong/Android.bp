@@ -1,12 +1,4 @@
 bootstrap_go_package {
-    name: "soong-batik",
-    pkgPath: "batik/soong/android",
-    srcs: [
-        "android/variable.go",
-    ],
-}
-
-bootstrap_go_package {
     name: "soong-batik-generator",
     pkgPath: "batik/soong/generator",
     deps: [
