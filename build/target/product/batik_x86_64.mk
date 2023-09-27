@@ -1,5 +1,4 @@
-# Copyright (C) 2015 The CyanogenMod Project
-#           (C) 2017-2018 The LineageOS Project
+# Copyright (C) 2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,12 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-BUILD_RRO_SYSTEM_PACKAGE := $(TOPDIR)vendor/batik/build/core/system_rro.mk
+$(call inherit-product, build/target/product/aosp_x86_64.mk)
+$(call inherit-product, vendor/batik/config/common.mk)
 
-# Rules for QCOM targets
-include $(TOPDIR)vendor/batik/build/core/qcom_target.mk
+# Allow building otatools
+TARGET_FORCE_OTA_PACKAGE := true
 
-# We modify several neverallows, so let the build proceed
-ifneq ($(TARGET_BUILD_VARIANT),user)
-SELINUX_IGNORE_NEVERALLOWS := true
-endif
+PRODUCT_NAME := batik_x86_64
