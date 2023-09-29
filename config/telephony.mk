@@ -16,14 +16,8 @@
 PRODUCT_COPY_FILES += \
     vendor/batik/prebuilt/common/etc/sensitive_pn.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sensitive_pn.xml
 
-# World APN list
-#PRODUCT_COPY_FILES += \
-    vendor/batik/prebuilt/common/etc/apns-conf.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/apns-conf.xml
-
 # Telephony packages
 PRODUCT_PACKAGES += \
-    messaging \
-    Stk \
     CellBroadcastReceiver
 
 # Default ringtone

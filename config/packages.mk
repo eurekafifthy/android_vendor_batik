@@ -45,8 +45,19 @@ PRODUCT_PACKAGES += \
     unzip \
     vim \
     wget \
-    zip
+    zip \
+    BluetoothExt \
+    Dialer \
+    ExactCalculator \
+    Launcher3QuickStep \
+    messaging \
+    Stk \
+    ThemePicker
 
+# exFAT tools
+PRODUCT_PACKAGES += \
+    fsck.exfat \
+    mkfs.exfat
 
 # Openssh
 PRODUCT_PACKAGES += \
@@ -57,6 +68,9 @@ PRODUCT_PACKAGES += \
     sshd_config \
     ssh-keygen \
     start-ssh
+
+PRODUCT_PACKAGES += \
+    apns-conf.xml
 
 # init file
 PRODUCT_COPY_FILES += \
