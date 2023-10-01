@@ -1,8 +1,5 @@
-# Inherit common Lineage stuff
-$(call inherit-product, vendor/lineage/config/common_mobile.mk)
+# Inherit common Batik stuff
+$(call inherit-product, vendor/batik/config/common_mobile.mk)
 
 PRODUCT_SIZE := full
 
-# Recorder
-PRODUCT_PACKAGES += \
-    Recorder

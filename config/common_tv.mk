@@ -1,8 +1,8 @@
-# Inherit common Lineage stuff
-$(call inherit-product, vendor/lineage/config/common.mk)
+# Inherit common Batik stuff
+$(call inherit-product, vendor/batik/config/common.mk)
 
-# Inherit Lineage atv device tree
-$(call inherit-product, device/lineage/atv/lineage_atv.mk)
+# Inherit Batik atv device tree
+$(call inherit-product, device/batik/atv/batik_atv.mk)
 
 # AOSP packages
 PRODUCT_PACKAGES += \
@@ -12,4 +12,4 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     LineageCustomizer
 
-PRODUCT_PACKAGE_OVERLAYS += vendor/lineage/overlay/tv
+PRODUCT_PACKAGE_OVERLAYS += vendor/batik/overlay/tv

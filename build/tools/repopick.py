@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #
 # Copyright (C) 2013-15 The CyanogenMod Project
 #           (C) 2017    The LineageOS Project
@@ -35,17 +35,8 @@ from xml.etree import ElementTree
 try:
     import requests
 except ImportError:
-    try:
-        # For python3
-        import urllib.error
-        import urllib.request
-    except ImportError:
-        # For python2
-        import imp
-        import urllib2
-        urllib = imp.new_module('urllib')
-        urllib.error = urllib2
-        urllib.request = urllib2
+    import urllib.error
+    import urllib.request
 
 
 # cmp() is not available in Python 3, define it manually
@@ -87,18 +78,16 @@ def fetch_query_via_ssh(remote_url, query):
                 'branch': data['branch'],
                 'change_id': data['id'],
                 'current_revision': data['currentPatchSet']['revision'],
+                'current_patch_set': data['currentPatchSet']['number'],
                 'number': int(data['number']),
                 'revisions': {patch_set['revision']: {
-                    '_number': int(patch_set['number']),
+                    'number': int(patch_set['number']),
                     'fetch': {
                         'ssh': {
                             'ref': patch_set['ref'],
                             'url': 'ssh://{0}:{1}/{2}'.format(userhost, port, data['project'])
                         }
-                    },
-                    'commit': {
-                        'parents': [{'commit': parent} for parent in patch_set['parents']]
-                    },
+		    }
                 } for patch_set in data['patchSets']},
                 'subject': data['subject'],
                 'project': data['project'],
@@ -120,12 +109,12 @@ def fetch_query_via_http(remote_url, query):
                 parts = line.rstrip().split("|")
                 if parts[0] in remote_url:
                     auth = requests.auth.HTTPBasicAuth(username=parts[1], password=parts[2])
-        status_code = '-1'
+        statusCode = '-1'
         if auth:
             url = '{0}/a/changes/?q={1}&o=CURRENT_REVISION&o=ALL_REVISIONS&o=ALL_COMMITS'.format(remote_url, query)
             data = requests.get(url, auth=auth)
-            status_code = str(data.status_code)
-        if status_code != '200':
+            statusCode = str(data.status_code)
+        if statusCode != '200':
             #They didn't get good authorization or data, Let's try the old way
             url = '{0}/changes/?q={1}&o=CURRENT_REVISION&o=ALL_REVISIONS&o=ALL_COMMITS'.format(remote_url, query)
             data = requests.get(url)

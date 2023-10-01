@@ -15,37 +15,37 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_arm.mk \
-    $(LOCAL_DIR)/lineage_arm64.mk \
-    $(LOCAL_DIR)/lineage_x86.mk \
-    $(LOCAL_DIR)/lineage_x86_64.mk \
-    $(LOCAL_DIR)/lineage_arm_ab.mk \
-    $(LOCAL_DIR)/lineage_arm64_ab.mk \
-    $(LOCAL_DIR)/lineage_x86_ab.mk \
-    $(LOCAL_DIR)/lineage_x86_64_ab.mk \
-    $(LOCAL_DIR)/lineage_tv_arm.mk \
-    $(LOCAL_DIR)/lineage_tv_arm64.mk \
-    $(LOCAL_DIR)/lineage_tv_x86.mk \
-    $(LOCAL_DIR)/lineage_tv_x86_64.mk \
-    $(LOCAL_DIR)/lineage_car_arm64.mk \
-    $(LOCAL_DIR)/lineage_car_x86_64.mk \
-    $(LOCAL_DIR)/lineage_sdk_phone_x86.mk \
-    $(LOCAL_DIR)/lineage_sdk_phone_x86_64.mk
+    $(LOCAL_DIR)/batik_arm.mk \
+    $(LOCAL_DIR)/batik_arm64.mk \
+    $(LOCAL_DIR)/batik_x86.mk \
+    $(LOCAL_DIR)/batik_x86_64.mk \
+    $(LOCAL_DIR)/batik_arm_ab.mk \
+    $(LOCAL_DIR)/batik_arm64_ab.mk \
+    $(LOCAL_DIR)/batik_x86_ab.mk \
+    $(LOCAL_DIR)/batik_x86_64_ab.mk \
+    $(LOCAL_DIR)/batik_tv_arm.mk \
+    $(LOCAL_DIR)/batik_tv_arm64.mk \
+    $(LOCAL_DIR)/batik_tv_x86.mk \
+    $(LOCAL_DIR)/batik_tv_x86_64.mk \
+    $(LOCAL_DIR)/batik_car_arm64.mk \
+    $(LOCAL_DIR)/batik_car_x86_64.mk \
+    $(LOCAL_DIR)/batik_sdk_phone_x86.mk \
+    $(LOCAL_DIR)/batik_sdk_phone_x86_64.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_arm-userdebug \
-    lineage_arm64-userdebug \
-    lineage_x86-userdebug \
-    lineage_x86_64-userdebug \
-    lineage_arm_ab-userdebug \
-    lineage_arm64_ab-userdebug \
-    lineage_x86_ab-userdebug \
-    lineage_x86_64_ab-userdebug \
-    lineage_tv_arm-userdebug \
-    lineage_tv_arm64-userdebug \
-    lineage_tv_x86-userdebug \
-    lineage_tv_x86_64-userdebug \
-    lineage_car_arm64-userdebug \
-    lineage_car_x86_64-userdebug \
-    lineage_sdk_phone_x86-userdebug \
-    lineage_sdk_phone_x86_64-userdebug
+    batik_arm-userdebug \
+    batik_arm64-userdebug \
+    batik_x86-userdebug \
+    batik_x86_64-userdebug \
+    batik_arm_ab-userdebug \
+    batik_arm64_ab-userdebug \
+    batik_x86_ab-userdebug \
+    batik_x86_64_ab-userdebug \
+    batik_tv_arm-userdebug \
+    batik_tv_arm64-userdebug \
+    batik_tv_x86-userdebug \
+    batik_tv_x86_64-userdebug \
+    batik_car_arm64-userdebug \
+    batik_car_x86_64-userdebug \
+    batik_sdk_phone_x86-userdebug \
+    batik_sdk_phone_x86_64-userdebug
